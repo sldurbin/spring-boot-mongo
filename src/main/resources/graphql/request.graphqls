@@ -1,0 +1,23 @@
+type Request {
+	id: ID!
+	requester: String!
+	createDate: String!
+	productName: String!
+	priority: Int
+	item: Item
+}
+
+type Item {
+    name: String!
+}
+
+# Root
+type Query {
+	findAllRequests: [Request]!
+	countRequests: Long!
+}
+
+# Root
+type Mutation {
+	createRequest(requester: String!, productName: String!, priority: Int): Request!
+}
